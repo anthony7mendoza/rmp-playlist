@@ -9,20 +9,21 @@ rmp-playlist is an open-source implementation of playlist layout for [Radiant Me
 - Video ads support
 
 ## Usage
-Download package in the release tab. See index.html for a working example
+Download package in the release tab. See index.html for a working example.
+
 Include playlist CSS file in your `<head>`:
 ```html
 <link rel="stylesheet" type="text/css" href="css/rmp-playlist.min.css">
 ```
 Include Radiant Media Player latest release:
 ```html
-<script src="//cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js"></script>
+<script src="https://cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js"></script>
 ```
-Include playlist JavaScript file in your:
+Include playlist JavaScript file:
 ```html
 <script src="js/rmp-playlist.min.js"></script>
 ```
-Add HTML elements to hold the player and playlist layout:
+Add HTML elements to hold the player and playlist layout to where you want it in your HTML page:
 ```html
 <!-- include a wrapper div for the playlist with rmp-pl as a class -->
 <div class="rmp-pl">
@@ -30,11 +31,10 @@ Add HTML elements to hold the player and playlist layout:
   <div id="rmpPlayer"></div>
 </div>
 ```
-Set our playlist settings, items. Once done init it.
+Then we set our playlist settings and items. Once done init it.
 ```html
 <script>
-    // We set our playlist settings and init it
-    // These settings will be applied each time the player is updated.
+    // These settings will be applied each time the playlist is updated with a new item.
     var playerSettings = {
       // a license key is only required if using Radiant Media Player paid features
       licenseKey: 'your-license-key',
@@ -48,7 +48,11 @@ Set our playlist settings, items. Once done init it.
     };
     // Define an array of video to be included in the playlist
     var playlistItems = [];
-    // Each item of the array is an object
+    // Each item of the array is an object with the following information
+    // poster:String, bitrates:Object, adTagUrl:String (optional)
+    // plThumbnailLoc:String (URL to thumbnail for each playlist item)
+    // plTilte:String (title for each playlist item)
+    // plDesc:String (description for each playlist item)
     playlistItems[0] = {
       poster: 'https://www.radiantmediaplayer.com/images/bbb-poster.jpg',
       bitrates: {
