@@ -35,15 +35,13 @@ Add HTML elements to hold the player and playlist layout to where you want it in
 Then we set our playlist settings and items. Once done init it.
 ```html
 <script>
+    // Then we set our playlist settings and items. Once done init it.
     // These settings will be applied each time the playlist is updated with a new item.
     var playerSettings = {
-      // a license key is only required if using Radiant Media Player paid features
-      licenseKey: 'your-license-key',
       delayToFade: 3000,
       width: 800,
       height: 450,
       skin: 's1',
-      ads: true,
       nav: true,
       sharing: true
     };
@@ -57,9 +55,11 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[0] = {
       poster: 'https://www.radiantmediaplayer.com/images/bbb-poster.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/smil:bbb.smil/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/bbb-360p.mp4',
+          'https://www.radiantmediaplayer.com/media/bbb-540p.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/bbb-poster.jpg',
       plTilte: 'Item 1 title',
       plDesc: 'Description for playlist item 1'
@@ -67,9 +67,10 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[1] = {
       poster: 'https://www.radiantmediaplayer.com/images/fashionshow.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/mp4:defile-on-2.mp4/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/defile-on-2.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/fashionshow.jpg',
       plTilte: 'Item 2 title',
       plDesc: 'Description for playlist item 2'
@@ -77,9 +78,10 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[2] = {
       poster: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/mp4:ed-360p.mp4/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/ed-360p.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dredirectlinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg',
       plTilte: 'Item 3 title',
       plDesc: 'Description for playlist item 3'
@@ -87,9 +89,10 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[3] = {
       poster: 'https://www.radiantmediaplayer.com/images/bbb-poster.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/smil:bbb.smil/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/bbb-360p.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=480x70&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dnonlinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/bbb-poster.jpg',
       plTilte: 'Item 4 title',
       plDesc: 'Description for playlist item 4'
@@ -97,9 +100,10 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[4] = {
       poster: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/mp4:defile-on-2.mp4/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/defile-on-2.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/poster-rmp-showcase.jpg',
       plTilte: 'Item 5 title',
       plDesc: 'Description for playlist item 5',
@@ -108,9 +112,10 @@ Then we set our playlist settings and items. Once done init it.
     playlistItems[5] = {
       poster: 'https://www.radiantmediaplayer.com/images/ed-poster.jpg',
       bitrates: {
-        hls: 'https://streamingrmp-1479.kxcdn.com/vod/mp4:ed-360p.mp4/playlist.m3u8'
+        mp4: [
+          'https://www.radiantmediaplayer.com/media/ed-360p.mp4'
+        ]
       },
-      adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dredirectlinear&correlator=',
       plThumbnailLoc: 'https://www.radiantmediaplayer.com/images/ed-poster.jpg',
       plTilte: 'Item 6 title',
       plDesc: 'Description for playlist item 6',
