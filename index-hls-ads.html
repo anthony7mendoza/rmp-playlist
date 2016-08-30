@@ -1,44 +1,30 @@
-# rmp-playlist
+<!DOCTYPE html>
+<html>
 
-rmp-playlist is an open-source implementation of playlist layout for [Radiant Media Player](https://www.radiantmediaplayer.com). 
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <!-- CSS for playlist layout -->
+  <link rel="stylesheet" type="text/css" href="css/rmp-playlist.min.css">
+  <!-- Radiant Media Player latest release -->
+  <script src="https://cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js"></script>
+  <!-- JavaScript for playlist layout -->
+  <script src="js/rmp-playlist.min.js"></script>
+</head>
 
-## Features
-- Display multiple videos with Radiant Media Player advanced playback features (HTML5 & Flash)
-- Mobile-ready and responsive playlist layout
-- Customizable with CSS and JavaScript
-- Video ads support
-
-## Usage
-Download package in the release tab. See index.html for a working example with Radiant Media Player free features. 
-A more advanced example with HLS and video ads (paid features) can be found at index-hls-ads.html.
-
-Include playlist CSS file in your `<head>`:
-```html
-<link rel="stylesheet" type="text/css" href="css/rmp-playlist.min.css">
-```
-Include Radiant Media Player latest release:
-```html
-<script src="https://cdn.radiantmediatechs.com/rmp/v3/latest/js/rmp.min.js"></script>
-```
-Include playlist JavaScript file:
-```html
-<script src="js/rmp-playlist.min.js"></script>
-```
-Add HTML elements to hold the player and playlist layout to where you want it in your HTML page:
-```html
-<!-- include a wrapper div for the playlist with rmp-pl as a class -->
-<div class="rmp-pl">
-  <!-- set player with id -->
-  <div id="rmpPlayer"></div>
-</div>
-```
-Then we set our playlist settings and items. Once done init it.
-```html
-<script>
+<body>
+  <!-- include a wrapper div for the playlist with rmp-pl as a class -->
+  <div class="rmp-pl">
+    <!-- set player with id -->
+    <div id="rmpPlayer"></div>
+  </div>
+  <script>
+    // Then we set our playlist settings and items. Once done init it.
     // These settings will be applied each time the playlist is updated with a new item.
     var playerSettings = {
       // a license key is only required if using Radiant Media Player paid features
-      licenseKey: 'your-license-key',
+      licenseKey: 'Kl8lbz16cz1rN2l2enM9Z2M9NnZvMnllaT9yb201ZGFzaXMzMGRiMEElXyo=',
       delayToFade: 3000,
       width: 800,
       height: 450,
@@ -130,14 +116,6 @@ Then we set our playlist settings and items. Once done init it.
     var rmpPlaylist = new RadiantPlaylist(element, playlistItems);
     rmpPlaylist.init();
   </script>
-```
-## Example
-An example of the implementation can be viewed here: [https://www.radiantmediaplayer.com/playlist.html](https://www.radiantmediaplayer.com/playlist.html)
+</body>
 
-## Issues
-Issues should be submitted in this GitHub page. We will do our best to review them.
-
-## License
-rmp-playlist is released under MIT
-
-Radiant Media Player has its own license which can be found here: [https://www.radiantmediaplayer.com/terms-of-service.html](https://www.radiantmediaplayer.com/terms-of-service.html)
+</html>
